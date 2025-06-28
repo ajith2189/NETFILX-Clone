@@ -7,6 +7,7 @@ import { onAuthStateChanged } from "firebase/auth/cordova";
 import { auth } from "./firebase";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Wishlist  from "./Pages/WishList/Wishlist";
 
 export default function App() {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/player/:id" element={<Player />} />
+        <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
     </>
   );

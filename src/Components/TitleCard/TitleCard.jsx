@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 function TitleCard({ title, category = "now_playing" }) {
   const cardsRef = useRef();
-  const imageURLFirstPart = "https://image.tmdb.org/t/p/w500/";
   const [apiData, setApiData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -42,7 +41,7 @@ function TitleCard({ title, category = "now_playing" }) {
 
         const data = await response.json();
         setApiData(data.results || []);
-        console.log("API Data loaded:", data.results);
+        console.log("API Data loaded");
       } catch (err) {
         console.error("Fetch error:", err);
         setError(err.message);
@@ -90,7 +89,7 @@ function TitleCard({ title, category = "now_playing" }) {
         {apiData.map((card, index) => {
           return (
             <Link to={`/player/${card.id}`} className="card" key={index}>
-              <img src={imageURLFirstPart + card.backdrop_path} alt="" />
+              <img src={`https://image.tmdb.org/t/p/w500/${card.backdrop_path}`} alt="" />
               <p> {card.original_title}</p>
             </Link>
           );

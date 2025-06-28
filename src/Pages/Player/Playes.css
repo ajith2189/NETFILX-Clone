@@ -1,24 +1,113 @@
-.player{
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.player img{
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 50px;
-    cursor: pointer;
+/* Main container */
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #000; /* dark cinema effect */
+  color: #fff;
+  padding: 2rem;
+  position: relative;
 }
 
-.player iframe{
-    border-radius: 10px;
+/* Trailer iframe */
+.player iframe {
+  width: 100%;
+  max-width: 960px;
+  height: 540px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
-.player-info{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
+
+/* Info section below the video */
+.player-info {
+  margin-top: 1rem;
+  max-width: 960px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+/* Back button (top-left) */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 45px;
+  height: 45px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Watchlist icon (top-right) */
+.watchlist_icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.tooltip {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+
+.tooltip:hover {
+  transform: scale(1.1);
+}
+
+.tooltip-text {
+  position: absolute;
+  top: 110%;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1001;
+}
+
+.tooltip:hover .tooltip-text {
+  opacity: 1;
+}
+
+/* No video fallback */
+.no-video {
+  width: 100%;
+  max-width: 960px;
+  height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111;
+  border-radius: 12px;
+  color: #aaa;
+  font-size: 1.2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }

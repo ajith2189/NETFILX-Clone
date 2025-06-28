@@ -1,0 +1,78 @@
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;             /* ✅ Allow wrapping into multiple rows */
+  gap: 1rem;                   /* ✅ Spacing between cards */
+  padding: 1rem;
+  justify-content: center;
+  cursor: pointer;     /* ✅ Center cards horizontally */
+}
+
+.movie-card {
+  width: 180px;                /* ✅ Fixed card width */
+  background: #222;
+  border-radius: 12px;
+  overflow: hidden;            /* ✅ Crop overflowing content */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}
+
+.movie-card:hover {
+  transform: scale(1.05);      /* ✅ Subtle zoom on hover */
+}
+
+.movie-card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 0.5rem;
+}
+
+.movie-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #999;
+  margin: 0.25rem 0;
+  text-decoration: none;
+  
+}
+
+.release-date {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0;
+}
+.wish-list {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #567;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.5px;
+}
+.back-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;         /* ✅ Make it round */
+  padding: 8px ;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-left: 50px;
+  
+}
+
+.back-button:hover {
+  transform: scale(1.1); 
+  background-color: rgb(190, 76, 76);     /* ✅ Slight zoom on hover */
+}
+
