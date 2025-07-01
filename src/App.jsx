@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Wishlist  from "./Pages/WishList/Wishlist";
 
 export default function App() {
-  //using navigate to go to the exact page
+  //using navigate to go to the exact  page
   const navigate = useNavigate();
 
   useEffect(() => {
